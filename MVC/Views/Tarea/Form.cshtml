@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/Content/css/FormTarea.css" rel="stylesheet" />
+<link href="~/Content/css/BotonLogin.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form_main">
+                <h4 class="heading"><strong> Escribe una Tarea Nueva </strong><span> </span></h4>
+
+                <div class="form">
+                    <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+                        <div class="col-1">
+                            <input type="text" required="" placeholder=" Titulo de la Tarea" value="" name="TxtTarea" class="txt">
+                        </div>
+                        <div class="col-3">
+                            <textarea placeholder=" Descripción " name="mess" type="text" class="txt_3"></textarea>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label> Fecha Inicio </label>
+                                <input data-date-format="yyyy-mm-dd" id="datepicker" placeholder="dd/MM/yyy">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label> Fecha Caducidad </label>
+                                <input data-date-format="yyyy-mm-dd" id="datepicker" placeholder="dd/MM/yyy">
+                            </div>
+                        </div>
+                        <br />
+                        <button type="submit" class="btn-success"> Agregar </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: linear-gradient(#77A5FA, #9B77FA, #F7F6FA);
+    }
+</style>
+
+
+<script type="text/javascript">
+
+    $('#datepicker').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
+    });
+    $('#datepicker').datepicker("setDate", new Date());
+
+
+
+</script>
