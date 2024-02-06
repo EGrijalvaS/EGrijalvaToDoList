@@ -2,93 +2,138 @@
     ViewData["Title"] = "Registrar";
     Layout = "";
 }
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <link href="~/Content/css/Login.css" rel="stylesheet" />
+    <link href="~/Content/css/BotonLogin.css" rel="stylesheet" />
+</head>
+<br />
+<hr />
+<br />
+<center>
+    <div class="col-md-8 col-md-3" id="login">
+        <section id="inner-wrapper" class="login" style="border-radius: 30px;">
+            <article>
+                <center>
+                    <div class="card">
+                        <div class="row">
+                            <center>
+                                <div class="form" style="align-items:center">
+                                    <center>
+                                        <form method="post">
+                                            <div class="form-group">
+                                                <div>
+                                                    <center>
+                                                        <h1 style="font-family:'Times New Roman', Times, serif"> ¡ Crea una Nueva Cuenta !</h1>
+                                                    </center>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="align-content-sm-center">
+                                                            <h6 style="font-family:Arial"> Nombre </h6>
+                                                            <div class="input-group   col-6">
+                                                                <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+                                                                <input type="text" class="form-control" placeholder="Nombre">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="col-md-12">
+                                                        <div class="align-content-sm-center">
+                                                            <h6 style="font-family:Arial"> Primer Apellido </h6>
+                                                            <div class="input-group   col-6">
+                                                                <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+                                                                <input type="text" class="form-control" placeholder=" 1er Apellido">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="col-md-12">
+                                                        <div class="align-content-sm-center">
+                                                            <h6 style="font-family:Arial"> Segundo Apellido </h6>
+                                                            <div class="input-group   col-6">
+                                                                <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+                                                                <input type="text" class="form-control" placeholder=" 2do Apellido">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h6 style="font-family:Arial"> Correo </h6>
+                                                        <div class="input-group   col-6">
+                                                            <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+                                                            <input type="text" class="form-control" placeholder="example@email.com">
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <h6 style="font-family: Arial"> Contraseña </h6>
+                                                            <div class="input-group   col-6">
+                                                                <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+                                                                <input type="password" class="form-control" placeholder=" Pass**** ">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <h6 style="font-family: Arial">Confirmar Contraseña </h6>
+                                                            <div class="input-group   col-6">
+                                                                <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+                                                                <input type="password" class="form-control" placeholder=" Pass**** ">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p>Date: <input type="text" id="datepicker"></p>
+                                                    </div>
+                                                </div>
+                                                <center>
+                                                    <button type="submit" class="btn btn-success" style="font-family:Arial">  Registrarse  </button>
+                                                    <br />
+                                                    <div class="col-md-2">
+                                                        @Html.ActionLink(" Regresar", "Login", "Acceso", new { area = "" }, new { @class = "btn btn-danger bi bi-backspace" })
+                                                    </div>
+                                                </center>
 
-<link href="~/Content/css/Login.css" rel="stylesheet" />
-<link href="~/Content/css/BotonLogin.css" rel="stylesheet" />
+                                            </div>
 
-<div class="col-md-8 col-md-3" id="login">
-    <section id="inner-wrapper" class="login" style="border-radius: 30px;">
-        <article>
-            <form>
-                <div class="form-group">
-                    <div>
-                        <center>
-                            <h1 style="font-family:'Times New Roman', Times, serif; color:aliceblue"> ¡ Crea una Nueva Cuenta !</h1>
-                        </center>
+                                        </form>
+                                    </center>
+                                </div>
+                            </center>
+                        </div>
+
                     </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="align-content-sm-center">
-                                <h6 style="font-family:Arial; color:aliceblue"> Nombre </h6>
-                                <div class="input-group   col-6">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                                    <input type="text" class="form-control" placeholder="Nombre">
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="col-md-12">
-                            <div class="align-content-sm-center">
-                                <h6 style="font-family:Arial; color:aliceblue"> Primer Apellido </h6>
-                                <div class="input-group   col-6">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                                    <input type="text" class="form-control" placeholder=" 1er Apellido">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="align-content-sm-center">
-                                <h6 style="font-family:Arial; color:aliceblue"> Segundo Apellido </h6>
-                                <div class="input-group   col-6">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                                    <input type="text" class="form-control" placeholder=" 2do Apellido">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </center>
+            </article>
+        </section>
+    </div>
+</center>
 
-                    <div class="row">
-                        <div class="col-md-12; position-relative">
-                            <h6 style="font-family:Arial; color:aliceblue"> Correo </h6>
-                            <div class="input-group   col-6">
-                                <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                                <input type="text" class="form-control" placeholder="example@email.com">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <h6 style="font-family: Arial; color: aliceblue"> Contraseña </h6>
-                                <div class="input-group   col-6">
-                                    <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-                                    <input type="password" class="form-control" placeholder=" Pass**** ">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <h6 style="font-family: Arial; color: aliceblue">Confirmar Contraseña </h6>
-                                <div class="input-group   col-6">
-                                    <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-                                    <input type="password" class="form-control" placeholder=" Pass**** ">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<style>
+    .card {
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    }
+</style>
 
-                    <center>
-                        <button type="submit" class="btn btn-info" style="font-family:Arial">  Registrarse  </button>
-                    </center>
 
-                </div>
-
-            </form>
-        </article>
-    </section>
-</div>
-
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>

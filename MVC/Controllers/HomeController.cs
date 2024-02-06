@@ -7,7 +7,8 @@ using System.Web.Mvc;
 
 namespace MVC.Controllers
 {
-    [ValidarSesion] // Validar vistas
+    //[ValidarSesion] 
+    // Validar vistas
     public class HomeController : Controller
     {
        

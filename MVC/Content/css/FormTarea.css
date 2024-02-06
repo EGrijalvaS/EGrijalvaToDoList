@@ -1,19 +1,47 @@
-﻿form_main {
-    width: 100 %;
+﻿body {
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+    margin: 0;
+    color: #224;
+    background: center;
+    background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823);
+}
+
+.card {
+    align-content: center;
+    align-items:center;
+    max-width: 200px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 200px;
+    height: 200px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+}
+
+form_main {
+    width: 200%;
 }
 
 .form_main h4 {
-    font - family: roboto;
-    font - size: 20px;
-    font - weight: 300;
-    margin - bottom: 15px;
-    margin - top: 20px;
-    text - transform: uppercase;
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
 }
 
 .heading {
-    border - bottom: 1px solid #fcab0e;
-    padding - bottom: 9px;
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
     position: relative;
 }
 
@@ -27,7 +55,7 @@
     }
 
 .form {
-    border - radius: 7px;
+    border-radius: 7px;
     padding: 6px;
 }
 
@@ -35,7 +63,7 @@
     border: 1px solid #ccc;
     margin: 10px 0;
     padding: 10px 0 10px 5px;
-    width: 100 %;
+    width: 100%;
 }
 
 .txt_3[type = "text"] {
@@ -54,8 +82,8 @@
     line - height: 35px;
     margin: 10px 0;
     padding: 0;
-    text - transform: uppercase;
-    width: 30 %;
+    text-transform: uppercase;
+    width: 30%;
 }
 
 .txt2:hover {
@@ -69,5 +97,10 @@
     padding: 10px 0 10px 5px;
     width: 100%;
     border: 1px solid #4f5c04;
-    border - radius: 25px;
+    border-radius: 25px;
 }
+
+
+
+
+

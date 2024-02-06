@@ -104,7 +104,20 @@ namespace _BL
             {
                 using(_DL.EGrijalvaToDoListEntities context = new _DL.EGrijalvaToDoListEntities())
                 {
+                    SqlParameter idTarea = new SqlParameter("@IdTarea", IdTarea);
 
+                    var query = context.Database.ExecuteSqlCommand($"TareaFinalizada{ IdTarea}");
+                
+                    if( query > 0 )
+                    {
+                        result.Correct = true;
+                        result.Message = "Se Eliminó la Tarea.";
+                    }
+                    else
+                    {
+                        result.Correct = false;
+                        result.Message = "¡Ops!, La Tarea NO pudo ser Eliminada.";
+                    }
                 }
             }
             catch (Exception ex)
