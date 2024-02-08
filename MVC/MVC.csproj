@@ -148,6 +148,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\BotonLogin.css" />
     <Content Include="Content\css\FormTarea.css" />
+    <Content Include="Content\css\Index.css" />
     <Content Include="Content\css\Login.css" />
     <Content Include="Content\css\TareaGetAll.css" />
     <Content Include="favicon.ico" />

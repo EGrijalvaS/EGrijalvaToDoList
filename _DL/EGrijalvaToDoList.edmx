@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EGrijalvaToDoListModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EGrijalvaToDoListModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Estatus">
           <Key>
             <PropertyRef Name="IdStatus" />
@@ -99,6 +99,10 @@
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
         </Function>
         <Function Name="RegistrarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="ApellidoPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="ApellidoMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
           <Parameter Name="Correo" Type="varchar" Mode="In" />
           <Parameter Name="Password" Type="varchar" Mode="In" />
           <Parameter Name="Registrado" Type="bit" Mode="InOut" />
@@ -143,8 +147,7 @@
             <End Role="Tarea" EntitySet="Tarea" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EGrijalvaToDoListModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -236,26 +239,26 @@
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteEstatus">
-            <Parameter Name="IdStatus" Mode="In" Type="Int32" />
+          <Parameter Name="IdStatus" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteTarea">
-            <Parameter Name="IdTarea" Mode="In" Type="Int32" />
+          <Parameter Name="IdTarea" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteUsuario">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAllStatus" ReturnType="Collection(EGrijalvaToDoListModel.GetAllStatus_Result)" />
           <FunctionImport Name="GetEstatusById" ReturnType="Collection(EGrijalvaToDoListModel.GetEstatusById_Result)">
-            <Parameter Name="IdStatus" Mode="In" Type="Int32" />
+          <Parameter Name="IdStatus" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetTareaById" ReturnType="Collection(EGrijalvaToDoListModel.GetTareaById_Result)">
-            <Parameter Name="IdTarea" Mode="In" Type="Int32" />
+          <Parameter Name="IdTarea" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetTareasByUsuario" ReturnType="Collection(EGrijalvaToDoListModel.GetTareasByUsuario_Result)">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetUsuarioById" ReturnType="Collection(EGrijalvaToDoListModel.GetUsuarioById_Result)">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="RegistrarUsuario">
             <Parameter Name="Correo" Mode="In" Type="String" />
@@ -288,6 +291,16 @@
           <FunctionImport Name="ValidarUsuario" ReturnType="Collection(Int32)">
             <Parameter Name="Correo" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegistrarUsuario1">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="ApellidoPaterno" Mode="In" Type="String" />
+            <Parameter Name="ApellidoMaterno" Mode="In" Type="String" />
+            <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Registrado" Mode="InOut" Type="Boolean" />
+            <Parameter Name="Mensaje" Mode="InOut" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetAllStatus_Result">
@@ -427,11 +440,11 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="RegistrarUsuario" FunctionName="EGrijalvaToDoListModel.Store.RegistrarUsuario" />
           <FunctionImportMapping FunctionImportName="UpdateEstatus" FunctionName="EGrijalvaToDoListModel.Store.UpdateEstatus" />
           <FunctionImportMapping FunctionImportName="UpdateTarea" FunctionName="EGrijalvaToDoListModel.Store.UpdateTarea" />
           <FunctionImportMapping FunctionImportName="UpdateUsuario" FunctionName="EGrijalvaToDoListModel.Store.UpdateUsuario" />
           <FunctionImportMapping FunctionImportName="ValidarUsuario" FunctionName="EGrijalvaToDoListModel.Store.ValidarUsuario" />
+          <FunctionImportMapping FunctionImportName="RegistrarUsuario1" FunctionName="EGrijalvaToDoListModel.Store.RegistrarUsuario" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

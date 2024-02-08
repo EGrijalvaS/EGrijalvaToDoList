@@ -1,9 +1,9 @@
 ﻿$(document).ready(function () {
-    renderTareas();
+    TareaGetAll();
 });
 
-function renderTareas() {
-    $("table_container").empty();
+function TareaGetAll() {
+    $("table_Container").empty();
 
     var settings = {
         type: "GET",
@@ -13,7 +13,7 @@ function renderTareas() {
 
     $.ajax(settings).done(function (result) {
         var theadTemplate = `
-        <table class="table tabla-hover" id="tableTareas">
+        <table class="table tabla-hover" id="table_Container">
         <thead>
         <tr>
         <th> Editar </th>
@@ -28,7 +28,7 @@ function renderTareas() {
         <tbody>
         `;
 
-        $("#table_container").append(theadTemplate);
+        $("#table_Container").append(theadTemplate);
 
         $.each(result.objects, function (i, tarea) {
 

@@ -106,23 +106,23 @@ namespace _BL
 
             try
             {
-                using(_DL.EGrijalvaToDoListEntities context = new _DL.EGrijalvaToDoListEntities())
-                {
-                    //SqlParameter idUsuario = new SqlParameter("@IdUsuario", IdUsuario);
+                //using(_DL.EGrijalvaToDoListEntities context = new _DL.EGrijalvaToDoListEntities())
+                //{
+                //    SqlParameter idUsuario = new SqlParameter("@IdUsuario", IdUsuario);
 
-                    //var query = context.ExcecuteSqlInterpolated($"DeleteUsuario{IdUsuario}");
+                //    var query = context.ExcecuteSqlCommand($"DeleteUsuario{IdUsuario}");
 
-                    //if( query > 0 )
-                    //{
-                    //    result.Correct = true;
-                    //    result.Message = " El Usuario fue Eliminado Exitosamente. ";
-                    //}
-                    //else
-                    //{
-                    //    result.Correct = false;
-                    //    result.Message = " ¡Error!, El Usuario NO pudo ser Eliminado. ";                   
-                    //}
-                }
+                //    if( query > 0 )
+                //    {
+                //        result.Correct = true;
+                //        result.Message = " El Usuario fue Eliminado Exitosamente. ";
+                //    }
+                //    else
+                //    {
+                //        result.Correct = false;
+                //        result.Message = " ¡Error!, El Usuario NO pudo ser Eliminado. ";                   
+                //    }
+                //}
             }
             catch(Exception ex)
             {

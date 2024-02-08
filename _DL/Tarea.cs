@@ -22,7 +22,7 @@ namespace _DL
         public Nullable<int> IdStatus { get; set; }
         public Nullable<int> IdUsuario { get; set; }
     
-        public virtual Estatu Estatus { get; set; }
+        public virtual Estatu Estatu { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

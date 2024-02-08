@@ -11,78 +11,80 @@
 <link href="~/Content/css/BotonLogin.css" rel="stylesheet" />
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10">
-            <div class="form_main">
-                <h4 class="heading" style="font-size:x-large"><strong> Escribe una Tarea Nueva </strong><span> </span></h4>
-                <hr />
-                <br />
-                <!------ Implementa Card---------->
-                <div class="card">
-                    <div class="row">
-                        <center>
-                            <div class="form" style="align-items:center">
+<center>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form_main">
+                    <h4 class="heading" style="font-size:x-large"><strong> Escribe una Tarea Nueva </strong><span> </span></h4>
+                    <hr />
+                    <br />
+                    <!------ Implementa Card---------->
+                    <div class="card">
+                        <div class="row">
+                            <center>
+                                <div class="form" style="align-items:center">
 
-                                <form method="post">
-                                    <br />
-                                    <!------ Titulo Tarea---------->
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="exampleFormControlTextarea1"> Titulo: </label>
-                                            <input type="text" class="form-control" placeholder="Titulo">
-                                        </div>
+                                    <form method="post">
                                         <br />
-                                        <!------ Descripcion---------->
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1"> Detalles de la Tarea :</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
-                                        <br />
-                                        <!------ Fecha Inicio---------->
+                                        <!------ Titulo Tarea---------->
                                         <div class="row">
                                             <div class="col">
-                                                <p>Date: <input type="text" id="datepicker"></p>
+                                                <label for="exampleFormControlTextarea1"> Titulo: </label>
+                                                <input type="text" class="form-control" placeholder="Titulo">
+                                            </div>
+                                            <br />
+                                            <!------ Descripcion---------->
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1"> Detalles de la Tarea :</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            </div>
+                                            <br />
+                                            <!------ Fecha Inicio---------->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p>Date: <input type="text" id="datepicker"></p>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <!------ Fecha Caducidad---------->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p>Date: <input type="text" id="datepicker"></p>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <!------ Status Tarea---------->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="inputState">State</label>
+                                                    <select id="inputState" class="form-control">
+                                                        <option selected>Choose...</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <br />
-                                        <!------ Fecha Caducidad---------->
-                                        <div class="row">
-                                            <div class="col">
-                                                <p>Date: <input type="text" id="datepicker"></p>
-                                            </div>
-                                        </div>
-                                        <br />
-                                        <!------ Status Tarea---------->
-                                        <div class="row">
-                                            <div class="col">
-                                                <label for="inputState">State</label>
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br />
-                                </form>
+                                    </form>
 
-                            </div>
+                                </div>
 
-                            <div class="col-md-2">
-                                @Html.ActionLink(" Regresar", "GetAll", "Tarea", new { area = "" }, new { @class = "btn btn-danger bi bi-backspace" })
-                            </div>
+                                <div class="col-md-2">
+                                    @Html.ActionLink(" Regresar", "GetAll", "Tarea", new { area = "" }, new { @class = "btn btn-danger bi bi-backspace" })
+                                </div>
+                                <br />
+                            </center>
                             <br />
-                        </center>
-                        <br />
+                        </div>
                     </div>
-                </div>
-                <!------ Card END---------->
+                    <!------ Card END---------->
 
+                </div>
             </div>
         </div>
     </div>
-</div>
+</center>
 
 <style>
     body {

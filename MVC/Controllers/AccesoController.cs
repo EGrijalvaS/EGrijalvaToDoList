@@ -55,7 +55,7 @@ namespace MVC.Controllers
 
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("sp_RegistrarUsuario", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[RegistrarUsuario]", con);
 
                 // Se agregan los Parametros de Entrada igual que el SP de la Base de Datos.
 
@@ -103,7 +103,7 @@ namespace MVC.Controllers
 
             using(SqlConnection con = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("sp_ValidarUsuario", con);  // Se agrega el Stored Procedure
+                SqlCommand cmd = new SqlCommand("[dbo].[ValidarUsuario]", con);  // Se agrega el Stored Procedure
 
                 // Se agregan los Parametros de Entrada igual que el SP de la Base de Datos.
 

@@ -1,33 +1,46 @@
-﻿@{
+﻿﻿@{
     ViewBag.Title = "Home Page";
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+<link href="~/Content/css/Index.css" rel="stylesheet" />
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-    </div>
+<main>
+    <body>
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="button" onclick="document.body.classList.add('active')">
+                        <span class="button-text">¡ Da Click Aqui !</span>
+                        <div class="button-backgrounds">
+                            <div class="button-circle button-circle1"></div>
+                            <div class="button-circle button-circle2"></div>
+                            <div class="button-circle button-circle3"></div>
+                            <div class="button-circle button-circle4"></div>
+                        </div>
+                    </div>
+                </center>
+                <center>
+                    <div class="popup">
+                        <div class="popup-inside">
+                            <div class="backgrounds">
+                                <div class="background"></div>
+                                <div class="background background2"></div>
+                                <div class="background background3"></div>
+                                <div class="background background4"></div>
+                                <div class="background background5"></div>
+                                <div class="background background6"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content-wrapper">
+                                <h1 style="font-family:'Times New Roman', Times, serif; font-size:x-large; color:black">! Hey !</h1>
+                                <p style="font-family: 'Times New Roman', Times, serif; font-size: xx-large; color: black"> ¡ BIENVENIDO ! </p>
+                                <p class="try-again" onclick="document.body.classList.remove('active')" style="color: black"> ¿Listo/a para tener un mejor control sobre tus Actividades?</p>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </body>
 </main>

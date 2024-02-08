@@ -11,19 +11,27 @@
 .card {
     align-content: center;
     align-items:center;
-    max-width: 200px;
-    min-height: 200px;
+    max-width: 500px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    max-width: 200px;
-    height: 200px;
+    justify-content: center;
+    max-width: 500px;
+    height: 400px;
     padding: 0;
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.45);
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
+}
+
+.card-body {
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
 }
 
 form_main {

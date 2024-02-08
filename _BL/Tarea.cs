@@ -221,7 +221,7 @@ namespace _BL
                                      Descripcion = tareaLINQ.Descripcion,
                                      FechaInicio = tareaLINQ.FechaInicio,
                                      FechaCaducidad = tareaLINQ.FechaCaducidad,
-                                     IdStatus = tareaLINQ.Estatus.IdStatus,
+                                     IdStatus = tareaLINQ.IdStatus,
                                      IdUsuario = tareaLINQ.Usuario.IdUsuario
 
                                  }).FirstOrDefault();
@@ -237,7 +237,7 @@ namespace _BL
                         tarea.Descripcion = item.Descripcion;
                         tarea.FechaInicio = item.FechaInicio.Value;
                         tarea.FechaCaducidad = item.FechaCaducidad.Value;
-                        tarea.estatus.IdStatus = item.IdStatus;
+                        tarea.estatus.IdStatus = (int)item.IdStatus;
                         tarea.usuario.IdUsuario = item.IdUsuario;
 
                         result.Object = tarea;

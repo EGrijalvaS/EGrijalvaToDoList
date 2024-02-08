@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVC.Controllers
 {
-    //[ValidarSesion]    
+   // [ValidarSesion]    
     // Vlidar Acceso a estas vistas por medio del Login
     public class TareaController : Controller
     {
