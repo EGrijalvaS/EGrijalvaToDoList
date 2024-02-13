@@ -23,11 +23,11 @@ namespace _BL
                     SqlParameter FechaInicio = new SqlParameter("FechaInicio", tarea.FechaInicio);
                     SqlParameter FechaCaducidad = new SqlParameter("FechaCaducidad", tarea.FechaCaducidad);
                     SqlParameter IdStatus = new SqlParameter("IdStatusd", tarea.estatus.IdStatus);
-                    SqlParameter IdUsuario = new SqlParameter("IdUsuario", tarea.usuario.IdUsuario);
+                    //SqlParameter IdUsuario = new SqlParameter("IdUsuario", tarea.usuario.IdUsuario);
 
                     string task = "AddTarea @Titulo, @Descripcion, @FechaInicio, @FechaCaducidad, @IdStatus, @IdUsuario";
 
-                    var query = context.Database.ExecuteSqlCommand(task, Titulo, Descripcion, FechaInicio, FechaCaducidad, IdStatus, IdUsuario);
+                    var query = context.Database.ExecuteSqlCommand(task, Titulo, Descripcion, FechaInicio, FechaCaducidad, IdStatus);  // IdUsuario
 
                     if(query > 0)
                     {

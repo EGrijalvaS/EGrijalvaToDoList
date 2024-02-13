@@ -7,59 +7,100 @@ using System.Web.Mvc;
 
 namespace MVC.Controllers
 {
-   // [ValidarSesion]    
+    //[ValidarSesion]    
     // Vlidar Acceso a estas vistas por medio del Login
     public class TareaController : Controller
     {
         // GET: Tarea
-
-        [HttpGet]
+      
         public ActionResult GetAll()
         {
             _ML.Tarea tarea = new _ML.Tarea();
-            tarea.Tareas = new List<object>(); // Lista de tareas 
-            _ML.Result result = new _ML.Result();
 
-            // Condicional
+            _ML.Result result = _BL.Tarea.GetAllTarea();
+
+            tarea.Tareas = new List<object>();
+
             if (result.Correct)
             {
-                tarea.Tareas = result.Objects;
+                tarea.Tareas = result.Objects.ToList();
+                return View(tarea);
             }
             else
             {
-                ViewBag.ErrorMessage = result.Message;
+                ViewBag.Message = result.Message;
+                return View(tarea);
+            }
+          
+        }
+
+
+        [HttpGet]
+
+        public ActionResult Form(int? IdTarea)
+        {
+           _ML.Tarea tarea = new _ML.Tarea();
+
+            if(IdTarea == 0 || IdTarea == null)
+            {
+                ViewBag.Accion = " Agregar Tarea ";
+            }
+            else
+            {
+                ViewBag.Accion = " Actualizar Tarea ";
+                _ML.Result result = _BL.Tarea.GetByIdTarea(IdTarea.Value);
             }
 
             return View(tarea);
         }
 
-        [HttpGet]
-
-        public ActionResult Form()
-        {
-
-            return View();
-        }
-
         [HttpPost]
-
-        public ActionResult Form(int IdTarea)
+        public ActionResult Form(_ML.Tarea tarea)
         {
-            _ML.Tarea tarea = new _ML.Tarea();
+            _ML.Result result = new _ML.Result();
 
-            tarea.estatus = new _ML.Estatus();
-
-            if (IdTarea == 0)
+            if(tarea.IdTarea  == 0)
             {
-                ViewBag.ErrorMessage = " Tarea Agregada Correctamente";
-                return View(tarea);
+                ViewBag.Accion = " Agregar ";
+                result = _BL.Tarea.AddTarea(tarea);
+
+                if (result.Correct)
+                {
+                    ViewBag.Message = result.Message;
+                }
+                else
+                {
+                    ViewBag.Messge = " No se agrego " + result.Message;
+                }
             }
             else
             {
-                ViewBag.ErrorMessage = " La Tarea NO pudo ser Añadida.";
-                return View();
+                ViewBag.Accion = " Actualizar ";
+                result = _BL.Tarea.UpdateTarea(tarea);
+
+                if (result.Correct)
+                {
+                    ViewBag.Message = result.Message;
+                }
+                else
+                {
+                    ViewBag.Messge = " No se Actualizo " + result.Message;
+                }
             }
+
+            return View(result);
         }
+
+        public ActionResult Delete(int IdTarea)
+        {
+            ViewBag.Accion = "Eliminar";
+            _ML.Result result = _BL.Tarea.DeleteTarea(IdTarea);
+            ViewBag.Mensaje = result.Message;
+            return View();
+        }
+
 
     }
 }
+
+

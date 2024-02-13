@@ -12,7 +12,8 @@ namespace _DL
         public static string GetConnectionString()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["EGrijalvaToDoList"].ConnectionString;
-            return ConfigurationManager.ConnectionStrings["EGrijalvaToDoList"].ConnectionString;
+            //return ConfigurationManager.ConnectionStrings["EGrijalvaToDoList"].ConnectionString;
+           return connectionString;
         }
     }
 }

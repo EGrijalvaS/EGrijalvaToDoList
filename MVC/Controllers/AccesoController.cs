@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _BL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,6 +32,14 @@ namespace MVC.Controllers
         [HttpPost]    // Método / Lógica para el Registro de Usuario
         public ActionResult Registrar(_ML.Usuario usuario)
         {
+            // Parametros del Stored Procedure:
+
+            string Nombre;
+            string ApellidoPaterno;
+            string ApellidoMaterno;
+            DateTime FechaNacimiento;
+
+            // Parametros de Salida
             bool registrado;
             string mensaje;
 
@@ -58,6 +67,11 @@ namespace MVC.Controllers
                 SqlCommand cmd = new SqlCommand("[dbo].[RegistrarUsuario]", con);
 
                 // Se agregan los Parametros de Entrada igual que el SP de la Base de Datos.
+
+                cmd.Parameters.AddWithValue("Nombre", usuario.Nombre);
+                cmd.Parameters.AddWithValue("ApellidoPaterno", usuario.ApellidoPaterno);
+                cmd.Parameters.AddWithValue("ApellidoMaterno", usuario.ApellidoMaterno);
+                cmd.Parameters.AddWithValue("FechaNacimiento", usuario.FechaNacimiento);
 
                 cmd.Parameters.AddWithValue("Correo", usuario.Correo);
                 cmd.Parameters.AddWithValue("Password", usuario.Password);
@@ -138,6 +152,7 @@ namespace MVC.Controllers
 
         public static string ConvertSha256(string texto)    // Recibe un objeto de tipo texto
         {
+     
             StringBuilder sb = new StringBuilder();
 
             using (SHA256 hash = SHA256Managed.Create())    // Hasheo tipo SHA256

@@ -1,60 +1,83 @@
 ﻿$(document).ready(function () {
-    TareaGetAll();
+    GetAllTarea();
+    GetAllStatus();
 });
 
-function TareaGetAll() {
-    $("table_Container").empty();
+function GetAllTarea() {
+    $.ajax({
+        type: 'GET',
+        url: ,
 
-    var settings = {
-        type: "GET",
-        url: "",
-        contentType: "application/json; charset=uft-8",
-    };
+        success: function (result) {
+            $('#tblTarea tbody').empty();
+            $.each(result.objects, function (i, empleado) {
+                var filas =
+                    '<tr>'
+                    + '<td class="text-center">'
+                    + '<a class="btn btn-warning bi bi-gear" href="#" onclick="GetById(' + tarea.idTarea + ')">'
+                    + '</a>'
+                    // Contenido de la Tabla
+                    + '</td>'
+                    + "<td id='idTarea' class='text-center'>" + tarea.idTarea + "</td>"
+                    + "<td class='text-center'>" + tarea.Titulo + "</td>"
+                    + "<td class='text-center'>" + tarea.Descripcion + "</td>"
+                    + "<td class='text-center'>" + tarea.FechaInicio + "</td>"
+                    + "<td class='text-center'>" + tarea.FechaCaducidad + "</td>"
+                    + "<td class='text-center'>" + tarea.IdStatus + "</td>"
 
-    $.ajax(settings).done(function (result) {
-        var theadTemplate = `
-        <table class="table tabla-hover" id="table_Container">
-        <thead>
-        <tr>
-        <th> Editar </th>
-        <th> Titulo </th>
-        <th> Descripción </th>
-        <th> Fecha Inicio </th>
-        <th> Fecha Caducidad </th>
-        <th> Estatus </th>
-        <th> Eliminar </th>
-        </tr>
-        </thead>
-        <tbody>
-        `;
+                    + '<td class="text-center"><button class="btn btn-danger bi bi-persson-dash" onclick="Eliminar(' + tarea.idTarea + ')"><span class="glyphicon-trash" style="color:#FFFFFF></span></button></td>'
+                    + "</tr>";
 
-        $("#table_Container").append(theadTemplate);
+                $("#tblTarea tbody").append(filas);
 
-        $.each(result.objects, function (i, tarea) {
+            });
+        },
 
-            var trowTemplate =
-                '<tr>'
-                + '<td class="text-center"> <button class="btn btn-info" onclick="GetById(' + tarea.idTarea + ')"><span class="bi bi-pencil-square"></span></button></td>'
-                + "<td class='text-center'>" + tarea.idTarea + "</td>"
-                + "<td class='text-center'>" + tarea.Titulo + "</td>"
-                + "<td class='text-center'>" + tarea.Descripcion + "</td>"
-                + "<td class='text-center'>" + tarea.FechaInicio + "</td>"
-                + "<td class='text-center'>" + tarea.FechaCaducidad + "</td>"
-                + "<td class='text-center'>" + tarea.Estatus + "</td>"
-                + '<td class="text-center"><button class="btn btn-danger" onclick="Delete"(' + tarea.idTarea + ')"><span class="bi bi-trash-fill"></span></button></td>'
-
-                + "<tr>";
-
-            $("tableTareas tbody").append(trowTemplate);
-        });
-
-        var tBodyEndTemplate = `
-        </tbody>
-        </table>
-        `;
-
-        $("table_container").append(tBodyEndTemplate);
-    }).fail(function (xhr, status, error) {
-        alert('Error en la Actualizacion.' + error);
+        error: function (result) {
+            alert('Error al hacer la Consulta.' + result.responseJSON.ErrorMessage);
+        }
     });
+
+    function AddTarea() {
+        var tareaJSON = {
+            "idTarea": 0,
+            "Titulo": $('txtNombre').val(),
+            "Descripcion": $('txtDescripcion').val(),
+            "FechaInicio": $('datePicker').val(),
+            "FechaInicio": $('datePicker').val(),
+            "estatus": {
+                "idStatus": $('#ddlEstatus').val(),
+                "Descripcion": "string",
+                "ListStatus": ["string"]
+            },
+        }
+
+        $.ajax({
+            type: 'POST',
+            URL: '',
+            dataType: '',
+            data: tareaJSON,
+
+            success: function (result) {
+
+            }
+        })
+    }
 }
+
+function Guardar() {
+    var tarea = {
+        "idTarea": Number($('#ddlIdTarea').val()),
+        "Titulo": $('#txtTitulo').val(),
+        "Descripcion": $('#txtDescripcion').val(),
+
+        "idStatus": Number($('#ddlIdStatus').val()),
+    }
+    if (tarea.idTarea == 0) {
+        AddTarea();
+    }
+    else {
+        UpdateTarea();
+    }
+}
+

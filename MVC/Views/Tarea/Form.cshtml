@@ -22,65 +22,64 @@
                     <!------ Implementa Card---------->
                     <div class="card">
                         <div class="row">
-                            <center>
-                                <div class="form" style="align-items:center">
 
-                                    <form method="post">
-                                        <br />
-                                        <!------ Titulo Tarea---------->
-                                        <div class="row">
-                                            <div class="col">
-                                                <label for="exampleFormControlTextarea1"> Titulo: </label>
-                                                <input type="text" class="form-control" placeholder="Titulo">
-                                            </div>
-                                            <br />
-                                            <!------ Descripcion---------->
-                                            <div class="form-group">
-                                                <label for="exampleFormControlTextarea1"> Detalles de la Tarea :</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                            </div>
-                                            <br />
-                                            <!------ Fecha Inicio---------->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p>Date: <input type="text" id="datepicker"></p>
-                                                </div>
-                                            </div>
-                                            <br />
-                                            <!------ Fecha Caducidad---------->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p>Date: <input type="text" id="datepicker"></p>
-                                                </div>
-                                            </div>
-                                            <br />
-                                            <!------ Status Tarea---------->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <label for="inputState">State</label>
-                                                    <select id="inputState" class="form-control">
-                                                        <option selected>Choose...</option>
-                                                        <option>...</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                            <!------ Formulario con Razor ---------->
+
+                            @using (Html.BeginForm("Form", "Tarea", FormMethod.Post, new { enctype = "multipart/form-data", @id = "form" }))
+                            {
+                                <!------ Titulo Tarea---------->
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="exampleFormControlTextarea1"> Titulo: </label>
+                                        <input type="text" class="form-control" placeholder="Titulo">
+                                    </div>
+                                    <br />
+                                    <!------ Descripcion---------->
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1"> Detalles de la Tarea :</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <br />
+                                    <!------ Fecha Inicio---------->
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Fecha Inicio: <input type="text" id="datepicker"></p>
                                         </div>
-                                        <br />
-                                    </form>
-
+                                    </div>
+                                    <br />
+                                    <!------ Fecha Caducidad---------->
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Fecha Caducidad: <input type="text" id="datepicker"></p>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <!------ Status Tarea---------->
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="inputState">State</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Elige una opcion...</option>
+                                                <option> Pendiente </option>
+                                                <option> Completado </option>
+                                                <option> NO Completado </option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-2">
+                                    <input type="submit" class="btn btn-success" value="@ViewBag.Accion"></input>
+                                    <br />
                                     @Html.ActionLink(" Regresar", "GetAll", "Tarea", new { area = "" }, new { @class = "btn btn-danger bi bi-backspace" })
                                 </div>
-                                <br />
-                            </center>
-                            <br />
+                            }
                         </div>
-                    </div>
-                    <!------ Card END---------->
-
+                            <br />
+                    </div>                    
                 </div>
+                    <!------ Card END---------->
+                
             </div>
         </div>
     </div>
@@ -100,8 +99,16 @@
     }
 </style>
 
-<script>
-    $(function () {
-        $("#datepicker").datepicker();
+<script type="text/javascript">
+
+    $('#datepicker1').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
     });
+    $('#datepicker1').datepicker("setDate", new Date());
+
+
+
 </script>
